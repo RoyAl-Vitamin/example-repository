@@ -10,4 +10,6 @@ import lombok.Setter;
 public class SimpleDto {
 
     private String message;
+
+    private String host;
 }
