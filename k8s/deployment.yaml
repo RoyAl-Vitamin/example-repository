@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-repository-deployment
+  labels:
+    app: example-repository
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: example-repository
+  template:
+    metadata:
+      labels:
+        app: example-repository
+    spec:
+      containers:
+        - name: example-repository
+          image: rvitamin/example-repository:latest
+          ports:
+            - containerPort: 8080
